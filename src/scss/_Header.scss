@@ -1,0 +1,226 @@
+header {
+  background-image: url(../../Public/assets/images/4.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+  
+  .header{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(6,1fr);
+    row-gap: 30px;
+  }
+
+  .containerHederMenu {
+    position: absolute;
+    right: -2rem;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 5rem;
+    height: 100vh;
+    background-color: #7cfc75;
+    animation: headerMenu 2s forwards;
+    z-index: 999;
+
+    @keyframes headerMenu {
+      0% {
+        right: -2rem;
+      }
+      90% {
+        right: 3rem;
+      }
+      100% {
+        right: 1rem;
+      }
+    }
+
+    .headerLogo {
+      width: 100%;
+      height: 5.5rem;
+      display: flex;
+      justify-content: center;
+
+      svg {
+        width: 80%;
+        cursor: pointer;
+      }
+    }
+
+    .headerMenu {
+
+      ul {
+        margin: 30% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Bebas Neue";
+
+        li {
+          line-height: 400%;
+          .item-menu {
+            color: #645756;
+            font-size: 1.5rem;
+            transition: all 0.5s;
+            &:hover {
+              color: #7cfc75;
+              text-shadow: 2px 3px 5px black, 2px 3px 10px black;
+            }
+          }
+        }
+      }
+    }
+    
+    .Login {
+      position: relative;
+      color: #645756;
+      font-size: 1.5rem;
+      font-family: "Bebas Neue";
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+      text-align: center;
+      box-shadow: 0 3px 5px black;
+      padding: 0.5rem 1rem;
+      overflow: hidden;
+      border-radius: 3px;
+      transition: all 0.3s ease-in-out;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: url(../../Public/assets/images/btn-create.jpg);
+        background-position: center;
+        background-size: 160%;
+        z-index: -2;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        color: black;
+        text-shadow: 2px 3px 5px #5fc85a, 2px 3px 20px #408a3d;
+        border: 1px solid #5fc85a;
+        box-shadow: 0 0 5px black;
+      }
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  .title-header {
+    justify-self: center;
+    font-family: menthox;
+    grid-column: 7/11;
+    grid-row: 2/3;
+    font-size: 7vw;
+    background: linear-gradient(to right, #ff8085, #fd757d);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(5px 3px 7px black);
+    animation: title 1s linear forwards;
+    opacity: 0;
+    animation-delay: 2s;
+    transition: all 0.7s;
+    &:hover {
+      cursor: pointer;
+      filter: drop-shadow(5px -4px 10px black);
+      transform: scale(1.01);
+    }
+  }
+  @keyframes title {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .btn-header {
+    color: #7cfc75;
+    grid-column: 8/10;
+    grid-row: 3/4;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-family: "Bebas Neue";
+    background: transparent;
+    box-shadow: -1px -1px 3px #ff8085, 5px 3px 5px #fe9194 inset,
+      -5px -3px 5px #e87679 inset, 5px 3px 20px 2px #c56367;
+    font-size: 3vw;
+    cursor: pointer;
+    transition: all 0.5s linear;
+    transform: scale(0);
+    animation: btnHeader 1s ease-in-out forwards;
+    animation-delay: 3s;
+    &:hover {
+      color: #fe878b;
+      text-shadow: 2px 3px 5px black, 2px 3px 10px black;
+      box-shadow: -1px -1px 3px #ff8085, 8px 5px 5px #fe9194 inset,
+        -8px -5px 5px #e87679 inset, 5px 5px 30px 6px #b55b5e;
+    }
+  }
+
+  @keyframes btnHeader {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .headerLogo {
+      width: 5rem;
+      height: 2.5rem;
+      margin-left: 1rem;
+    }
+
+    .headerMenu {
+
+      ul {
+        width: 20%;
+        flex-direction: row;
+
+        li {
+          margin: 0 1rem;
+        }
+      }
+    }
+    .Login {
+      top: 2rem;
+      right: 2rem;
+      background-color: #7cfc75;
+      border: none;
+      box-shadow: none;
+      background-image: none;
+      &:hover {
+        box-shadow: 0 5px 2px black;
+      }
+    }
+  }
+}

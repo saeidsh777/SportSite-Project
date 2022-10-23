@@ -1,0 +1,71 @@
+@media only screen and(max-width:567px) {
+  header {
+    background-position: 35% 30% !important;
+    background-size: 1500px !important;
+    background-repeat: no-repeat;
+    .header {
+      row-gap: 1px !important;
+    }
+
+    .containerHederMenu {
+      position: fixed !important;
+      animation-play-state: paused !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 3rem !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+
+      .headerLogo {
+        width: 3rem !important;
+        height: 2.5rem !important;
+        margin-left: 0 !important;
+      }
+
+      .headerMenu {
+        ul {
+          width: 20% !important;
+          flex-direction: row !important;
+
+          li {
+            margin: 0 0.8rem !important;
+            .item-menu {
+              font-size: 0.8rem !important;
+              line-height: 0;
+            }
+          }
+        }
+      }
+      .Login {
+        top: 2rem !important;
+        right: 1rem !important;
+        background-color: #7cfc75 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-image: none !important;
+        font-size: 0.8rem !important;
+        &:hover {
+          box-shadow: 0 5px 2px black !important;
+        }
+      }
+    }
+  }
+  .title-header {
+    grid-column: 8/13 !important;
+    font-size: 7vw;
+    align-self: flex-end !important;
+  }
+
+  .btn-header{
+    grid-column: 9/12  !important;
+    align-self: center !important;
+    padding: 1.5rem .7rem !important;
+  }
+}
+
+@media only screen and (max-width:992px){
+    main{
+        padding: 1rem 1rem;
+    }
+}
