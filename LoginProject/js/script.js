@@ -11,7 +11,7 @@ function keypressuser() {
     userNameNote.style.opacity = "0";
   } else if (userNameinput.value.length < 8) {
     userNameNote.style.opacity = "1";
-    userNameNote.style.color = "rgb(255 107 107)";
+    userNameNote.style.color = "#ffee76";
     userNameNote.innerHTML = "Your Username Character Must Be at least : 8";
   } else {
     userNameNote.style.opacity = "1";
@@ -26,7 +26,7 @@ function keypresspass() {
     passwordNote.style.opacity = "0";
   } else if (passwordinput.value.length < 12) {
     passwordNote.style.opacity = "1";
-    passwordNote.style.color = "rgb(255 107 107)";
+    passwordNote.style.color = "#ffee76";
     passwordNote.innerHTML = "Your Password Character Must Be  at least : 12";
   } else {
     passwordNote.style.opacity = "1";
@@ -46,11 +46,9 @@ let regexEmail = /^(\w+[\._]?\w+)@([a-zA-Z]{3,6})\.([a-zA-Z]{2,3})$/;
 let regexPasswordUser = /^[\w+]{8,16}$/;
 // --------------------
 
-
 CreateAccount.addEventListener("click", function () {
   boxLogin.style.opacity = "0";
   boxLogin.style.zIndex = "-22";
-  
   boxCreate.style.opacity = "1";
   boxCreate.style.zIndex = "999";
 });
@@ -58,22 +56,23 @@ CreateAccount.addEventListener("click", function () {
 back.addEventListener("click", function () {
   boxLogin.style.opacity = "1";
   boxLogin.style.zIndex = "999";
-  
   boxCreate.style.opacity = "0";
   boxCreate.style.zIndex = "-22";
 });
 
 EmailInputCreate.addEventListener("blur", function () {
   let validEmail = regexEmail.test(EmailInputCreate.value);
-  
-  if (validEmail | EmailInputCreate.value === "") {
+
+  if (validEmail | (EmailInputCreate.value === "")) {
     EmailInputCreate.style.border = "1px solid white";
     EmailInputCreate.style.color = "white";
     EmailInputCreate.previousElementSibling.style.color = "white";
+    EmailInputCreate.nextElementSibling.style.visibility = "hidden";
   } else {
     EmailInputCreate.style.border = "1px solid #fd5757";
     EmailInputCreate.style.color = "#fd5757";
     EmailInputCreate.previousElementSibling.style.color = "#fd5757";
+    EmailInputCreate.nextElementSibling.style.visibility = "visible";
   }
 });
 
@@ -83,37 +82,41 @@ EmailInputCreate.addEventListener("focus", function () {
   EmailInputCreate.previousElementSibling.style.color = "black";
 });
 
-userNameInputCreate.addEventListener("blur", function (){
+userNameInputCreate.addEventListener("blur", function () {
   let validUserName = regexPasswordUser.test(userNameInputCreate.value);
-  
-  if (validUserName | userNameInputCreate.value === "") {
+
+  if (validUserName | (userNameInputCreate.value === "")) {
     userNameInputCreate.style.border = "1px solid white";
     userNameInputCreate.style.color = "white";
     userNameInputCreate.previousElementSibling.style.color = "white";
+    userNameInputCreate.nextElementSibling.style.visibility = "hidden";
   } else {
     userNameInputCreate.style.border = "1px solid #fd5757";
     userNameInputCreate.style.color = "#fd5757";
     userNameInputCreate.previousElementSibling.style.color = "#fd5757";
+    userNameInputCreate.nextElementSibling.style.visibility = "visible";
   }
 });
 
-passwordInputCreate.addEventListener("focus", function () {
-  passwordInputCreate.style.border = "1px solid black";
-  passwordInputCreate.style.color = "black";
-  passwordInputCreate.previousElementSibling.style.color = "black";
+userNameInputCreate.addEventListener("focus", function () {
+  userNameInputCreate.style.border = "1px solid black";
+  userNameInputCreate.style.color = "black";
+  userNameInputCreate.previousElementSibling.style.color = "black";
 });
 
-passwordInputCreate.addEventListener("blur", function (){
+passwordInputCreate.addEventListener("blur", function () {
   let validPassword = regexPasswordUser.test(passwordInputCreate.value);
-  
-  if (validPassword | passwordInputCreate.value === "") {
+
+  if (validPassword | (passwordInputCreate.value === "")) {
     passwordInputCreate.style.border = "1px solid white";
     passwordInputCreate.style.color = "white";
     passwordInputCreate.previousElementSibling.style.color = "white";
+    passwordInputCreate.nextElementSibling.style.visibility = "hidden";
   } else {
     passwordInputCreate.style.border = "1px solid #fd5757";
     passwordInputCreate.style.color = "#fd5757";
     passwordInputCreate.previousElementSibling.style.color = "#fd5757";
+    passwordInputCreate.nextElementSibling.style.visibility = "visible";
   }
 });
 
@@ -122,4 +125,3 @@ passwordInputCreate.addEventListener("focus", function () {
   passwordInputCreate.style.color = "black";
   passwordInputCreate.previousElementSibling.style.color = "black";
 });
-
