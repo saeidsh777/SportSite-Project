@@ -15,7 +15,7 @@ function keypressuser() {
     userNameNote.innerHTML = "Your Username Character Must Be at least : 8";
   } else {
     userNameNote.style.opacity = "1";
-    userNameNote.style.color = "#d3e71c";
+    userNameNote.style.color = "#61ff70";
     userNameNote.innerHTML = "Valid UserName";
   }
   console.log(userNameinput.value);
@@ -30,7 +30,7 @@ function keypresspass() {
     passwordNote.innerHTML = "Your Password Character Must Be  at least : 12";
   } else {
     passwordNote.style.opacity = "1";
-    passwordNote.style.color = "#d3e71c";
+    passwordNote.style.color = "#61ff70";
     passwordNote.innerHTML = "Valid PassWord";
   }
 }
