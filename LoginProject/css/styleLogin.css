@@ -45,6 +45,7 @@ body {
   color: white;
   border-radius: 15px;
   background-color: #b22a36;
+  background: linear-gradient(to top,#b22a36,#FE7D81,#B2B1B4);
   transition: all 0.5s linear;
 }
 .boxMain .home:hover {
@@ -291,7 +292,6 @@ body {
   margin: -0.7rem 0 0.5rem 0.5rem;
   font-size: 0.65rem;
   color: #d3e71c;
-  /* text-shadow: 0 0 1px black; */
   visibility: hidden;
 }
 
