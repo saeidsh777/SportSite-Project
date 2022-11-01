@@ -12,7 +12,7 @@ function keypressuser() {
   } else if (userNameinput.value.length < 8) {
     userNameNote.style.opacity = "1";
     userNameNote.style.color = "#ffee76";
-    userNameNote.innerHTML = "Your Username Character Must Be at least : 8";
+    userNameNote.innerHTML = "Invalid UserName";
   } else {
     userNameNote.style.opacity = "1";
     userNameNote.style.color = "#61ff70";
@@ -27,11 +27,11 @@ function keypresspass() {
   } else if (passwordinput.value.length < 12) {
     passwordNote.style.opacity = "1";
     passwordNote.style.color = "#ffee76";
-    passwordNote.innerHTML = "Your Password Character Must Be  at least : 12";
+    passwordNote.innerHTML = "Invalid Password";
   } else {
     passwordNote.style.opacity = "1";
     passwordNote.style.color = "#61ff70";
-    passwordNote.innerHTML = "Valid PassWord";
+    passwordNote.innerHTML = "Valid Password";
   }
 }
 
@@ -124,4 +124,14 @@ passwordInputCreate.addEventListener("focus", function () {
   passwordInputCreate.style.border = "1px solid black";
   passwordInputCreate.style.color = "black";
   passwordInputCreate.previousElementSibling.style.color = "black";
+});
+
+btnCreateAccount.addEventListener("click", function (event) {
+  let validEmail = regexEmail.test(EmailInputCreate.value);
+  let validUserName = regexPasswordUser.test(userNameInputCreate.value);
+  let validPassword = regexPasswordUser.test(passwordInputCreate.value);
+
+  if (!validEmail | !validUserName | !validPassword) {
+    event.preventDefault();
+  }
 });
